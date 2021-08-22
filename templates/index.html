@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+		body {
+			background-image: url("images/cc_new_icon.png");
+			height: 100%;
+			background-position: center;
+			backgroumd-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+	</style>		
+</head>
+<body>
+	
+	<h1 style="font-family:Courier New" align="center"> Credit Card Lead Prediction </h1>
+	<div style="color:blue">
+		<form action="/predict" method="post">
+		<h4> Vintage for Customer (In Months): </h4>
+		<input type="text" name="vintage" required="required" oninput="this.value = this.value.replace(/[^0-9.]/g, '0').replace(/(\..*)\./g, '0');">
+		<h4> Customer's Region Code: </h4>
+		<select name="Region_Code" id="Region_Code" required="required">
+                <option value="0"> RG250 </option>
+                <option value="1"> RG251 </option>
+		<option value="2"> RG252 </option>
+                <option value="3"> RG253 </option>
+		<option value="4"> RG254 </option>
+                <option value="5"> RG255 </option>
+		<option value="6"> RG256 </option>
+                <option value="7"> RG257 </option>
+		<option value="8"> RG258 </option>
+                <option value="9"> RG259 </option>
+		<option value="10"> RG260 </option>
+                <option value="11"> RG261 </option>
+		<option value="12"> RG262 </option>
+                <option value="13"> RG263 </option>
+		<option value="14"> RG264 </option>
+                <option value="15"> RG265 </option>
+		<option value="16"> RG266 </option>
+                <option value="17"> RG267 </option>
+		<option value="18"> RG268 </option>
+                <option value="19"> RG269 </option>
+		<option value="20"> RG270 </option>
+                <option value="21"> RG271 </option>
+		<option value="22"> RG272 </option>
+                <option value="23"> RG273 </option>
+		<option value="24"> RG274 </option>
+                <option value="25"> RG275 </option>
+		<option value="26"> RG276 </option>
+                <option value="27"> RG277 </option>
+		<option value="28"> RG278 </option>
+                <option value="29"> RG279 </option>
+		<option value="30"> RG280 </option>
+                <option value="31"> RG281 </option>
+		<option value="32"> RG282 </option>
+		<option value="33"> RG283 </option>
+                <option value="34"> RG284 </option>
+            	</select>
+		<h4> Does the Customer have an active Credit Product (Home Loan, Personal Loan, etc.)?: </h4>
+		<select name="Credit_Product" id="Credit_Product" required="required">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            	</select>
+		<h4> Customer's Age: </h4>
+		<input type="text" name="age" required="required" oninput="this.value = this.value.replace(/[^0-9.]/g, '0').replace(/(\..*)\./g, '0');">
+		<h4> Customer's Gender: </h4>
+		<select name="Gender" id="Gender" required="required">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            	</select>
+		<h4> Is Customer Active? (In last 3 months): </h4>
+		<select name="Is_Active" id="Is_Active" required="required">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            	</select>
+		<h4> Customer's Occupation Type: </h4>
+		<select name="Occupation" id="Occupation" required="required">
+                <option value="0">Entrepreneur</option>
+                <option value="1">Other</option>
+		<option value="2">Salaried</option>
+                <option value="3">Self-Employed</option>
+            	</select>
+		<h4> Acquisition Channel Code: </h4>
+		<select name="Channel_Code" id="Channel_Code" required="required">
+                <option value="0">X1</option>
+                <option value="1">X2</option>
+		<option value="2">X3</option>
+                <option value="3">X4</option>
+            	</select>
+		<h4> Average Account Balance (in last 12 months): </h4>
+		<input type="text" name="Avg_Account_Balance" required="required" oninput="this.value = this.value.replace(/[^0-9.]/g, '0').replace(/(\..*)\./g, '0');">
+		<br>
+		<br>
+		<button id="sub" type="submit"> Predict </button>
+		<button type="reset"> Reset </button>
+		<br>
+		</form>
+		<br>
+	" {{ output_text }}"
+	<br>
+	<br>
+	</div>
+</body>
+</html>
+
