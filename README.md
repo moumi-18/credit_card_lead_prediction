@@ -14,5 +14,5 @@ Happy Customer Bank is a mid-sized private bank that deals in all kinds of banki
 * Is_Lead (Target Variable):  	0 - Customer is NOT INTERESTED, 1 - Customer IS INTERESTED
 
 
-Project Documentation File: classification project CCLP documentation.pdf
-Project Deployment: 
+#### Project Documentation File: classification project CCLP documentation.pdf
+#### Project Deployment: https://credit-card-lead-predict.herokuapp.com/
